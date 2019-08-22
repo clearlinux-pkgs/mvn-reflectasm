@@ -4,11 +4,12 @@
 #
 Name     : mvn-reflectasm
 Version  : 1.07
-Release  : 1
+Release  : 2
 URL      : https://github.com/EsotericSoftware/reflectasm/archive/1.07.tar.gz
 Source0  : https://github.com/EsotericSoftware/reflectasm/archive/1.07.tar.gz
-Source1  : https://repo1.maven.org/maven2/com/esotericsoftware/reflectasm/reflectasm/1.07/reflectasm-1.07.jar
-Source2  : https://repo1.maven.org/maven2/com/esotericsoftware/reflectasm/reflectasm/1.07/reflectasm-1.07.pom
+Source1  : https://repo1.maven.org/maven2/com/esotericsoftware/reflectasm/reflectasm/1.07/reflectasm-1.07-shaded.jar
+Source2  : https://repo1.maven.org/maven2/com/esotericsoftware/reflectasm/reflectasm/1.07/reflectasm-1.07.jar
+Source3  : https://repo1.maven.org/maven2/com/esotericsoftware/reflectasm/reflectasm/1.07/reflectasm-1.07.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-3-Clause
@@ -43,10 +44,13 @@ license components for the mvn-reflectasm package.
 mkdir -p %{buildroot}/usr/share/package-licenses/mvn-reflectasm
 cp license.txt %{buildroot}/usr/share/package-licenses/mvn-reflectasm/license.txt
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/esotericsoftware/reflectasm/reflectasm/1.07
-cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/com/esotericsoftware/reflectasm/reflectasm/1.07/reflectasm-1.07.jar
+cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/com/esotericsoftware/reflectasm/reflectasm/1.07/reflectasm-1.07-shaded.jar
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/esotericsoftware/reflectasm/reflectasm/1.07
-cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/com/esotericsoftware/reflectasm/reflectasm/1.07/reflectasm-1.07.pom
+cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/com/esotericsoftware/reflectasm/reflectasm/1.07/reflectasm-1.07.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/esotericsoftware/reflectasm/reflectasm/1.07
+cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/com/esotericsoftware/reflectasm/reflectasm/1.07/reflectasm-1.07.pom
 
 
 %files
@@ -54,6 +58,7 @@ cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/com/esotericsoftware/re
 
 %files data
 %defattr(-,root,root,-)
+/usr/share/java/.m2/repository/com/esotericsoftware/reflectasm/reflectasm/1.07/reflectasm-1.07-shaded.jar
 /usr/share/java/.m2/repository/com/esotericsoftware/reflectasm/reflectasm/1.07/reflectasm-1.07.jar
 /usr/share/java/.m2/repository/com/esotericsoftware/reflectasm/reflectasm/1.07/reflectasm-1.07.pom
 
