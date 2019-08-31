@@ -4,7 +4,7 @@
 #
 Name     : mvn-reflectasm
 Version  : 1.07
-Release  : 4
+Release  : 5
 URL      : https://github.com/EsotericSoftware/reflectasm/archive/1.07.tar.gz
 Source0  : https://github.com/EsotericSoftware/reflectasm/archive/1.07.tar.gz
 Source1  : https://repo1.maven.org/maven2/com/esotericsoftware/reflectasm/reflectasm/1.07/reflectasm-1.07-shaded.jar
